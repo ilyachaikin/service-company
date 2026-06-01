@@ -1,0 +1,56 @@
+services:
+
+  postgres:
+    image: postgis/postgis:15-3.3-alpine
+    environment:
+      POSTGRES_DB: service_company_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "54321:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/init-postgres.sh:/docker-entrypoint-initdb.d/init-postgres.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  seq:
+    image: datalust/seq
+    environment:
+      ACCEPT_EULA: "Y"
+      SEQ_FIRSTRUN_ADMINPASSWORD: "Admin123!"
+    ports:
+      - "54322:5341"
+      - "54323:80"
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "54324:1025"
+      - "54325:8025"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=service_company_db;Username=postgres;Password=postgres"
+      Serilog__SeqUrl: "http://seq:5341"
+      Email__SmtpHost: "mailhog"
+      Email__SmtpPort: "1025"
+      Cors__AllowedOrigins__0: "http://localhost:8888"
+    volumes:
+      - uploads_data:/app/uploads
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  uploads_data:

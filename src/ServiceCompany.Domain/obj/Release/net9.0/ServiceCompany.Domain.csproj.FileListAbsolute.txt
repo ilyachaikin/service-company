@@ -1,0 +1,12 @@
+D:\diplom\src\ServiceCompany.Domain\bin\Release\net9.0\ServiceCompany.Domain.deps.json
+D:\diplom\src\ServiceCompany.Domain\bin\Release\net9.0\ServiceCompany.Domain.dll
+D:\diplom\src\ServiceCompany.Domain\bin\Release\net9.0\ServiceCompany.Domain.pdb
+D:\diplom\src\ServiceCompany.Domain\obj\Release\net9.0\ServiceCompany.Domain.csproj.AssemblyReference.cache
+D:\diplom\src\ServiceCompany.Domain\obj\Release\net9.0\ServiceCompany.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\diplom\src\ServiceCompany.Domain\obj\Release\net9.0\ServiceCompany.Domain.AssemblyInfoInputs.cache
+D:\diplom\src\ServiceCompany.Domain\obj\Release\net9.0\ServiceCompany.Domain.AssemblyInfo.cs
+D:\diplom\src\ServiceCompany.Domain\obj\Release\net9.0\ServiceCompany.Domain.csproj.CoreCompileInputs.cache
+D:\diplom\src\ServiceCompany.Domain\obj\Release\net9.0\ServiceCompany.Domain.dll
+D:\diplom\src\ServiceCompany.Domain\obj\Release\net9.0\refint\ServiceCompany.Domain.dll
+D:\diplom\src\ServiceCompany.Domain\obj\Release\net9.0\ServiceCompany.Domain.pdb
+D:\diplom\src\ServiceCompany.Domain\obj\Release\net9.0\ref\ServiceCompany.Domain.dll

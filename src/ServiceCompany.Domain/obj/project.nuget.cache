@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "tqG0MMQkQLI=",
+  "success": true,
+  "projectFilePath": "D:\\diplom\\src\\ServiceCompany.Domain\\ServiceCompany.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rukuromi\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\rukuromi\\.nuget\\packages\\nettopologysuite\\2.6.0\\nettopologysuite.2.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}

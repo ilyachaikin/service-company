@@ -1,0 +1,15 @@
+D:\diplom\src\ServiceCompany.Application\obj\Release\net9.0\ServiceCompany.Application.csproj.AssemblyReference.cache
+D:\diplom\src\ServiceCompany.Application\obj\Release\net9.0\ServiceCompany.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\diplom\src\ServiceCompany.Application\obj\Release\net9.0\ServiceCompany.Application.AssemblyInfoInputs.cache
+D:\diplom\src\ServiceCompany.Application\obj\Release\net9.0\ServiceCompany.Application.AssemblyInfo.cs
+D:\diplom\src\ServiceCompany.Application\obj\Release\net9.0\ServiceCompany.Application.csproj.CoreCompileInputs.cache
+D:\diplom\src\ServiceCompany.Application\bin\Release\net9.0\ServiceCompany.Application.deps.json
+D:\diplom\src\ServiceCompany.Application\bin\Release\net9.0\ServiceCompany.Application.dll
+D:\diplom\src\ServiceCompany.Application\bin\Release\net9.0\ServiceCompany.Application.pdb
+D:\diplom\src\ServiceCompany.Application\bin\Release\net9.0\ServiceCompany.Domain.dll
+D:\diplom\src\ServiceCompany.Application\bin\Release\net9.0\ServiceCompany.Domain.pdb
+D:\diplom\src\ServiceCompany.Application\obj\Release\net9.0\ServiceC.95FF650A.Up2Date
+D:\diplom\src\ServiceCompany.Application\obj\Release\net9.0\ServiceCompany.Application.dll
+D:\diplom\src\ServiceCompany.Application\obj\Release\net9.0\refint\ServiceCompany.Application.dll
+D:\diplom\src\ServiceCompany.Application\obj\Release\net9.0\ServiceCompany.Application.pdb
+D:\diplom\src\ServiceCompany.Application\obj\Release\net9.0\ref\ServiceCompany.Application.dll
