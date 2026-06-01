@@ -10,3 +10,4 @@ D:\diplom\src\ServiceCompany.Domain\obj\Debug\net9.0\ServiceCompany.Domain.dll
 D:\diplom\src\ServiceCompany.Domain\obj\Debug\net9.0\refint\ServiceCompany.Domain.dll
 D:\diplom\src\ServiceCompany.Domain\obj\Debug\net9.0\ServiceCompany.Domain.pdb
 D:\diplom\src\ServiceCompany.Domain\obj\Debug\net9.0\ref\ServiceCompany.Domain.dll
+D:\diplom\src\ServiceCompany.Domain\obj\Debug\net9.0\ServiceCompany.Domain.sourcelink.json

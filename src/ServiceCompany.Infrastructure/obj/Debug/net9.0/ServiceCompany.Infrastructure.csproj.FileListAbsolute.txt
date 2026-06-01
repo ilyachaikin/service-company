@@ -16,3 +16,4 @@ D:\diplom\src\ServiceCompany.Infrastructure\obj\Debug\net9.0\ServiceCompany.Infr
 D:\diplom\src\ServiceCompany.Infrastructure\obj\Debug\net9.0\refint\ServiceCompany.Infrastructure.dll
 D:\diplom\src\ServiceCompany.Infrastructure\obj\Debug\net9.0\ServiceCompany.Infrastructure.pdb
 D:\diplom\src\ServiceCompany.Infrastructure\obj\Debug\net9.0\ref\ServiceCompany.Infrastructure.dll
+D:\diplom\src\ServiceCompany.Infrastructure\obj\Debug\net9.0\ServiceCompany.Infrastructure.sourcelink.json

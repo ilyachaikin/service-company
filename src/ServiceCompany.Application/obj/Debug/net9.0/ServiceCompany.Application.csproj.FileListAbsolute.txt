@@ -13,3 +13,4 @@ D:\diplom\src\ServiceCompany.Application\obj\Debug\net9.0\ServiceCompany.Applica
 D:\diplom\src\ServiceCompany.Application\obj\Debug\net9.0\refint\ServiceCompany.Application.dll
 D:\diplom\src\ServiceCompany.Application\obj\Debug\net9.0\ServiceCompany.Application.pdb
 D:\diplom\src\ServiceCompany.Application\obj\Debug\net9.0\ref\ServiceCompany.Application.dll
+D:\diplom\src\ServiceCompany.Application\obj\Debug\net9.0\ServiceCompany.Application.sourcelink.json

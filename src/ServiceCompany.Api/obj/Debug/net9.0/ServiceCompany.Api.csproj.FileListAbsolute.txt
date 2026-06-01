@@ -201,3 +201,4 @@ D:\diplom\src\ServiceCompany.Api\bin\Debug\net9.0\ExcelNumberFormat.dll
 D:\diplom\src\ServiceCompany.Api\bin\Debug\net9.0\RBush.dll
 D:\diplom\src\ServiceCompany.Api\bin\Debug\net9.0\SixLabors.Fonts.dll
 D:\diplom\src\ServiceCompany.Api\bin\Debug\net9.0\System.IO.Packaging.dll
+D:\diplom\src\ServiceCompany.Api\obj\Debug\net9.0\ServiceCompany.Api.sourcelink.json
