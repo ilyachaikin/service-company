@@ -13,7 +13,7 @@ public static class SeedData
         var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
         var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-        await context.Database.EnsureCreatedAsync();
+        await context.Database.MigrateAsync();
 
         await context.Database.ExecuteSqlRawAsync(@"
             CREATE TABLE IF NOT EXISTS ""WorkActAttachments"" (
