@@ -13,7 +13,18 @@ public static class SeedData
         var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
         var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-        await context.Database.MigrateAsync();
+        for (var attempt = 0; ; attempt++)
+        {
+            try
+            {
+                await context.Database.MigrateAsync();
+                break;
+            }
+            catch when (attempt < 5)
+            {
+                await Task.Delay(TimeSpan.FromSeconds(Math.Pow(2, attempt)));
+            }
+        }
 
         await context.Database.ExecuteSqlRawAsync(@"
             CREATE TABLE IF NOT EXISTS ""WorkActAttachments"" (
@@ -110,17 +121,16 @@ public static class SeedData
         var engineerId = (await userManager.FindByEmailAsync("styazhkin@gmail.com"))?.Id ?? "";
 
         await context.Database.ExecuteSqlRawAsync($@"
-            INSERT INTO ""Tickets"" (""Id"",""Title"",""Description"",""Status"",""Priority"",""Type"",""ClientId"",""ServiceObjectId"",""EquipmentId"",""AssignedUserId"",""DueDate"",""CompletedAt"",""SlaResponseDeadline"",""SlaResolutionDeadline"",""IsSlaBreached"",""MaintenancePlanId"",""ChecklistResultJson"",""CreatedAt"",""CreatedBy"",""UpdatedAt"",""UpdatedBy"",""IsDeleted"")
+            INSERT INTO ""MaintenancePlans"" (""Id"",""ServiceObjectId"",""EquipmentId"",""Title"",""Description"",""CronExpression"",""StartDate"",""EndDate"",""IsActive"",""LastGeneratedDate"",""LastGeneratedTicketId"",""ChecklistTemplateJson"",""DefaultEngineerId"",""DefaultPriority"",""CreatedAt"",""CreatedBy"",""UpdatedAt"",""UpdatedBy"",""IsDeleted"")
             VALUES
-              ('f22b7a8e-bcab-432b-b6c8-3583af24e2b6','Неисправность ПС','Сработала пожарная сигнализация, нужно проверить датчики, произвести чистку',2,0,0,'136b2abe-3e9c-466d-b5be-2c5868576038','419c6d1e-1eb2-4db4-ab94-fe205b9a1c5c',NULL,NULL,NULL,NULL,NULL,NULL,false,NULL,NULL,'2026-05-31 18:23:54.864389+00','admin@servicecompany.com','2026-05-31 18:26:46.092779+00','admin@servicecompany.com',false),
-              ('3b924ba4-2ec4-4bf9-a804-13d40e3aff0c','Ежемесячное ТО Пожарной сигнализации','Раз в месяц если нету заявок приезжать, осматривать объект, проводить консультацию персоналу, проверять ПС, производить контрольное срабатывание ПС',1,2,1,'136b2abe-3e9c-466d-b5be-2c5868576038','419c6d1e-1eb2-4db4-ab94-fe205b9a1c5c','61f7d7bf-0c89-467e-9fe8-686c4bd00128','{engineerId}',NULL,NULL,NULL,NULL,false,'1f67db4b-44b0-4088-bc3a-e8eee21db12c',NULL,'2026-05-31 19:00:10.805637+00','System','2026-05-31 19:00:10.805643+00','System',false)
+              ('1f67db4b-44b0-4088-bc3a-e8eee21db12c','419c6d1e-1eb2-4db4-ab94-fe205b9a1c5c','61f7d7bf-0c89-467e-9fe8-686c4bd00128','Ежемесячное ТО Пожарной сигнализации','Раз в месяц если нету заявок приезжать, осматривать объект, проводить консультацию персоналу, проверять ПС, производить контрольное срабатывание ПС','0 9 1 * *','2026-01-03 19:00:00+00','2026-12-30 19:00:00+00',true,NULL,NULL,NULL,'{engineerId}',2,'2026-05-31 18:26:13.297869+00','admin@servicecompany.com','2026-05-31 19:00:10.805645+00','System',false)
             ON CONFLICT (""Id"") DO NOTHING;
         ");
 
-        await context.Database.ExecuteSqlRawAsync($@"
-            INSERT INTO ""MaintenancePlans"" (""Id"",""ServiceObjectId"",""EquipmentId"",""Title"",""Description"",""CronExpression"",""StartDate"",""EndDate"",""IsActive"",""LastGeneratedDate"",""LastGeneratedTicketId"",""ChecklistTemplateJson"",""DefaultEngineerId"",""DefaultPriority"",""CreatedAt"",""CreatedBy"",""UpdatedAt"",""UpdatedBy"",""IsDeleted"")
+        await context.Database.ExecuteSqlRawAsync(@"
+            INSERT INTO ""Tickets"" (""Id"",""Title"",""Description"",""Status"",""Priority"",""Type"",""ClientId"",""ServiceObjectId"",""EquipmentId"",""AssignedUserId"",""DueDate"",""CompletedAt"",""SlaResponseDeadline"",""SlaResolutionDeadline"",""IsSlaBreached"",""MaintenancePlanId"",""ChecklistResultJson"",""CreatedAt"",""CreatedBy"",""UpdatedAt"",""UpdatedBy"",""IsDeleted"")
             VALUES
-              ('1f67db4b-44b0-4088-bc3a-e8eee21db12c','419c6d1e-1eb2-4db4-ab94-fe205b9a1c5c','61f7d7bf-0c89-467e-9fe8-686c4bd00128','Ежемесячное ТО Пожарной сигнализации','Раз в месяц если нету заявок приезжать, осматривать объект, проводить консультацию персоналу, проверять ПС, производить контрольное срабатывание ПС','0 9 1 * *','2026-01-03 19:00:00+00','2026-12-30 19:00:00+00',true,'2026-05-31 19:00:10.392648+00','3b924ba4-2ec4-4bf9-a804-13d40e3aff0c',NULL,'{engineerId}',2,'2026-05-31 18:26:13.297869+00','admin@servicecompany.com','2026-05-31 19:00:10.805645+00','System',false)
+              ('f22b7a8e-bcab-432b-b6c8-3583af24e2b6','Неисправность ПС','Сработала пожарная сигнализация, нужно проверить датчики, произвести чистку',2,0,0,'136b2abe-3e9c-466d-b5be-2c5868576038','419c6d1e-1eb2-4db4-ab94-fe205b9a1c5c',NULL,NULL,NULL,NULL,NULL,NULL,false,NULL,NULL,'2026-05-31 18:23:54.864389+00','admin@servicecompany.com','2026-05-31 18:26:46.092779+00','admin@servicecompany.com',false)
             ON CONFLICT (""Id"") DO NOTHING;
         ");
 
